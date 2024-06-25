@@ -46,7 +46,7 @@ public class UtenteService {
         utente.setCognome((utenteDTO.getCognome()));
         utente.setEmail((utenteDTO.getEmail()));
 
-        utente.setRuolo(Ruolo.USER);
+        utente.setRuolo(Ruolo.ADMIN);
 
         utente.setPassword(passwordEncoder.encode(utenteDTO.getPassword()));
 

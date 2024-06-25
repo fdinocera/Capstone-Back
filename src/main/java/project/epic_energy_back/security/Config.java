@@ -15,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.filter.CorsFilter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -22,8 +23,9 @@ import java.util.Map;
 import java.util.Properties;
 
 @Configuration
-@EnableWebSecurity(debug = true)
-@EnableMethodSecurity
+//@EnableWebSecurity(debug = true)
+@EnableWebSecurity
+//@EnableMethodSecurity
 public class Config {
 
    /* @Bean
@@ -52,10 +54,7 @@ public class Config {
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers( "/auth/**").permitAll());
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers( "/auth/register/**").permitAll());
 
-
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/utenti/**").permitAll());
-
-
 
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/**").permitAll());
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/byYear/**").permitAll());
@@ -66,7 +65,6 @@ public class Config {
         //nega l'accesso a qualsiasi servizio che non sia get e path /api/users
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/**").denyAll());
 
-
         return httpSecurity.build();
     }
 
@@ -75,6 +73,22 @@ public class Config {
 
         return new BCryptPasswordEncoder();
     }
+
+//    @Bean
+//    public CorsFilter corsFilter() {
+//        CorsConfiguration corsConfiguration = new CorsConfiguration();
+//        corsConfiguration.setAllowedOrigins(List.of("https://6675adec70b58fb5c49eb4b0--sensational-crostata-e9ee60.netlify.app/"));
+//        corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+//        corsConfiguration.setAllowedHeaders(List.of("Authorization", "Cache-Control", "Content-Type"));
+//        corsConfiguration.setAllowCredentials(true);
+//        corsConfiguration.setMaxAge(3600L);  // Cache preflight response for 1 hour
+//
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", corsConfiguration);
+//
+//        return new CorsFilter(source);
+//    }
+}
 
   /*  @Bean//permette di abilitare l'accesso al servizio anche da parte di server diversi da quello su cui risiede
     //il servizio. In questo caso ho abilitato tutti i server ad accedere a tutti i servizi
@@ -88,4 +102,3 @@ public class Config {
 
         return source;
     }*/
-}

@@ -16,6 +16,7 @@ project\epic_energy_back\exceptions\UnauthorizedException.class
 project\epic_energy_back\entities\Prenotazione.class
 project\epic_energy_back\entities\SoggiornoCorrente.class
 project\epic_energy_back\exceptions\BadRequestException.class
+project\epic_energy_back\security\CorsConfig.class
 project\epic_energy_back\dto\SoggiornoCorrenteDto.class
 project\epic_energy_back\dto\PrenotazioneDto.class
 project\epic_energy_back\controller\AuthController.class

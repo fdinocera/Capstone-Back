@@ -23,12 +23,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "https://6675adec70b58fb5c49eb4b0--sensational-crostata-e9ee60.netlify.app/")
 //@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PrenotazioneController {
 
     @Autowired
     private PrenotazioneService prenotazioneService;
+
+    @RequestMapping(value = "/prenotazioni", method = RequestMethod.OPTIONS)
+    public void options() {
+        // Risponde alle richieste OPTIONS
+    }
 
 
     @PostMapping("/prenotazioni")
