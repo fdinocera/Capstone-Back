@@ -46,9 +46,5 @@ public class AuthController {
         return authService.authenticateUtenteAndCreateToken(utenteLoginDTO);
     }
 
-    @GetMapping("/utenti")
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
-    public Optional<Utente> getUtenteByEmail() {
-        return utenteService.getUtenteByEmail("fdinocera@libero.it");
-    }
+
 }

@@ -31,17 +31,17 @@ public class AuthService {
         if (utenteOptional.isPresent()) {
             Utente utente = utenteOptional.get();
             if (passwordEncoder.matches(utenteLoginDto.getPassword(), utente.getPassword())) {
-                 //jwtTool.createToken(utente);
-                 AuthDataDto authDataDto = new AuthDataDto();
-                  authDataDto.setAccessToken(jwtTool.createToken(utente));
-                 authDataDto.setRuolo(utente.getRuolo());
-                  authDataDto.setNome(utente.getNome());
-                    authDataDto.setCognome(utente.getCognome());
-                    authDataDto.setEmail(utente.getEmail());
-                    authDataDto.setUsername(utente.getUsername());
-                    authDataDto.setId(utente.getId());
-                  //authDataDto.setAvatar(utente.getAvatar());
-                    return authDataDto;
+                jwtTool.createToken(utente);
+                AuthDataDto authDataDto = new AuthDataDto();
+                authDataDto.setAccessToken(jwtTool.createToken(utente));
+                authDataDto.setRuolo(utente.getRuolo());
+                authDataDto.setNome(utente.getNome());
+                authDataDto.setCognome(utente.getCognome());
+                authDataDto.setEmail(utente.getEmail());
+                authDataDto.setUsername(utente.getUsername());
+                authDataDto.setId(utente.getId());
+                //authDataDto.setAvatar(utente.getAvatar());
+                return authDataDto;
 
             } else {
                 throw new UnauthorizedException("Errore nel login, riloggarsi");
