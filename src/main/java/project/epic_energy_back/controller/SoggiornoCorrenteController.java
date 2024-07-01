@@ -14,6 +14,7 @@ import project.epic_energy_back.repository.SoggiornoCorrenteRepository;
 import project.epic_energy_back.service.SoggiornoCorrenteService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -35,10 +36,17 @@ public class SoggiornoCorrenteController {
         return soggiornoCorrenteService.saveSoggiornoCorrente(soggiornoCorrenteDto);
     }
 
-    @GetMapping("/prenotazioni/soggiornoCorrente")
+//    @GetMapping("/prenotazioni/soggiornoCorrente")
+//    @PreAuthorize("hasAnyAuthority('ADMIN')")
+//    public List<SoggiornoCorrente> getSoggiornoCorrente() {
+//        return soggiornoCorrenteService.getSoggiornoCorrente();
+//    }
+
+
+    @GetMapping("/prenotazioni/soggiornoCorrente/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
-    public List<SoggiornoCorrente> getSoggiornoCorrente() {
-        return soggiornoCorrenteService.getSoggiornoCorrente();
+    public SoggiornoCorrente getSoggiornoCorrente(@PathVariable int id){
+        return soggiornoCorrenteService.getSoggiornoCorrente(id);
     }
 
     @PutMapping("/prenotazioni/soggiornoCorrente/{id}")

@@ -31,6 +31,11 @@ public class PrenotazioneService {
         prenotazione.setCostoSoggiorno((prenotazioneDto.getCostoSoggiorno()));
         prenotazione.setNomeCliente(prenotazioneDto.getNomeCliente());
 
+        prenotazione.setComunicazioneDatiPs(false);
+        prenotazione.setRiversamentoSomme(false);
+        prenotazione.setProblemaOspite("");
+        prenotazione.setSoluzioneOspite("");
+
         prenotazioneRepository.save(prenotazione);
         return prenotazione;
     }
@@ -42,7 +47,6 @@ public class PrenotazioneService {
     public Optional<Prenotazione> getPrenotazioneById(int id) {
         return prenotazioneRepository.findById(id);
     }
-
 
     public Prenotazione updatePrenotazione(int id, PrenotazioneDto prenotazioneDto) {
 
@@ -56,6 +60,13 @@ public class PrenotazioneService {
             prenotazione.setCheckOut(prenotazioneDto.getCheckOut());
             prenotazione.setCheckIn(prenotazioneDto.getCheckIn());
             prenotazione.setCostoSoggiorno(prenotazioneDto.getCostoSoggiorno());
+
+            prenotazione.setComunicazioneDatiPs(prenotazioneDto.getComunicazioneDatiPs());
+            prenotazione.setRiversamentoSomme(prenotazioneDto.getRiversamentoSomme());
+            prenotazione.setProblemaOspite(prenotazioneDto.getProblemaOspite());
+            prenotazione.setSoluzioneOspite(prenotazioneDto.getSoluzioneOspite());
+
+
             prenotazioneRepository.save(prenotazione);
             return prenotazione;
         } else {

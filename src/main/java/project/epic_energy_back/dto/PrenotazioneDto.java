@@ -14,4 +14,9 @@ public class PrenotazioneDto {
     private LocalDate checkOut;
     private String piattaforma;
     private double costoSoggiorno;
+
+    private String problemaOspite;
+    private String soluzioneOspite;
+    private Boolean comunicazioneDatiPs;
+    private Boolean riversamentoSomme;
 }

@@ -24,4 +24,9 @@ public class Prenotazione {
     private LocalDate checkOut;
     private String piattaforma;
     private Double costoSoggiorno;
+
+    private String problemaOspite;
+    private String soluzioneOspite;
+    private Boolean comunicazioneDatiPs;
+    private Boolean riversamentoSomme;
 }

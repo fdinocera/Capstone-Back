@@ -32,15 +32,26 @@ public class SoggiornoCorrenteService {
         return soggiornoCorrente;
     }
 
-    public List<SoggiornoCorrente> getSoggiornoCorrente(){
-       return soggiornoCorrenteRepository.findAll();
+    //    public List<SoggiornoCorrente> getSoggiornoCorrente(){
+//       return soggiornoCorrenteRepository.findAll();
+//    }
+
+
+    public SoggiornoCorrente getSoggiornoCorrente(Integer id) {
+        Optional<SoggiornoCorrente> soggiornoCorrenteOptional = soggiornoCorrenteRepository.findById(id);
+        if (soggiornoCorrenteOptional.isPresent()) {
+            //SoggiornoCorrente soggiornoCorrente = soggiornoCorrenteOptional.get();
+            return soggiornoCorrenteOptional.get();
+        } else {
+            return null;
+        }
     }
 
-    public SoggiornoCorrente updateSoggiornoCorrente(int id, SoggiornoCorrenteDto soggiornoCorrenteDto){
+    public SoggiornoCorrente updateSoggiornoCorrente(int id, SoggiornoCorrenteDto soggiornoCorrenteDto) {
 
         Optional<SoggiornoCorrente> soggiornoCorrenteOptional = soggiornoCorrenteRepository.findById(id);
         if (soggiornoCorrenteOptional.isPresent()) {
-            SoggiornoCorrente soggiornoCorrente= soggiornoCorrenteOptional.get();
+            SoggiornoCorrente soggiornoCorrente = soggiornoCorrenteOptional.get();
 
             soggiornoCorrente.setRiversamentoSomme(soggiornoCorrenteDto.getRiversamentoSomme());
             soggiornoCorrente.setDataInizio(soggiornoCorrenteDto.getDataInizio());

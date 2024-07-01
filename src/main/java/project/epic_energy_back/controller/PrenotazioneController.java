@@ -84,7 +84,6 @@ public class PrenotazioneController {
             throw new BadRequestException(bindingResult.getAllErrors().stream().map(error -> error.getDefaultMessage()).
                     reduce("", (s, s2) -> s + s2));
         }
-
         return prenotazioneService.updatePrenotazione(id, prenotazioneDto);
     }
 
