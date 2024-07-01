@@ -49,6 +49,6 @@ public class AuthController {
     @GetMapping("/utenti")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public Optional<Utente> getUtenteByEmail() {
-        return utenteService.getUtenteByEmail("finocera@libero.it");
+        return utenteService.getUtenteByEmail("fdinocera@libero.it");
     }
 }
