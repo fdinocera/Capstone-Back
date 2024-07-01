@@ -48,11 +48,20 @@ public class PrenotazioneController {
         return prenotazioneService.savePrenotazione(prenotazioneDto);
     }
 
+//    @GetMapping("/prenotazioni")
+//    @PreAuthorize("hasAnyAuthority('ADMIN')")
+//    public List<Prenotazione> getAllPrenotazioni() {
+//        return prenotazioneService.getAllPrenotazioni();
+//    }
+
     @GetMapping("/prenotazioni")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<Prenotazione> getAllPrenotazioni() {
         return prenotazioneService.getAllPrenotazioni();
     }
+
+
+
 
     @GetMapping("/prenotazioni/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")

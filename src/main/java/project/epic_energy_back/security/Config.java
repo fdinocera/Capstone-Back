@@ -67,8 +67,7 @@ public class Config {
                 "https://courageous-crepe-2d7d0a.netlify.app/"
         ));
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        corsConfiguration.setAllowedHeaders(
-                List.of("*"));
+        corsConfiguration.setAllowedHeaders(List.of("*"));
         corsConfiguration.setAllowCredentials(true);
         //corsConfiguration.setMaxAge(3600L);  // Cache preflight response for 1 hour
 
