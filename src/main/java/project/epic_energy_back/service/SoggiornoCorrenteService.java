@@ -31,12 +31,6 @@ public class SoggiornoCorrenteService {
         soggiornoCorrenteRepository.save(soggiornoCorrente);
         return soggiornoCorrente;
     }
-
-    //    public List<SoggiornoCorrente> getSoggiornoCorrente(){
-//       return soggiornoCorrenteRepository.findAll();
-//    }
-
-
     public SoggiornoCorrente getSoggiornoCorrente(Integer id) {
         Optional<SoggiornoCorrente> soggiornoCorrenteOptional = soggiornoCorrenteRepository.findById(id);
         if (soggiornoCorrenteOptional.isPresent()) {
