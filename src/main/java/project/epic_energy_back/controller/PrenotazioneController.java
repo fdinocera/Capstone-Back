@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-//@CrossOrigin(origins = "https://6675adec70b58fb5c49eb4b0--sensational-crostata-e9ee60.netlify.app/")
-//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "*")
 public class PrenotazioneController {
 
@@ -48,20 +46,11 @@ public class PrenotazioneController {
         return prenotazioneService.savePrenotazione(prenotazioneDto);
     }
 
-//    @GetMapping("/prenotazioni")
-//    @PreAuthorize("hasAnyAuthority('ADMIN')")
-//    public List<Prenotazione> getAllPrenotazioni() {
-//        return prenotazioneService.getAllPrenotazioni();
-//    }
-
     @GetMapping("/prenotazioni")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     public List<Prenotazione> getAllPrenotazioni() {
         return prenotazioneService.getAllPrenotazioni();
     }
-
-
-
 
     @GetMapping("/prenotazioni/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN')")

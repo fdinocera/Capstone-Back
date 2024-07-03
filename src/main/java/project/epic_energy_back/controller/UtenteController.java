@@ -6,7 +6,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import project.epic_energy_back.dto.UtenteDTO;
 import project.epic_energy_back.entities.Utente;
 import project.epic_energy_back.exceptions.BadRequestException;

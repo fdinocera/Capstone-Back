@@ -44,7 +44,7 @@ public class Config {
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/byYear/**").permitAll());
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/FromCurrent/**").permitAll());
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/current/**").permitAll());
-        httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/soggiornoCorrente/**").permitAll());
+        //httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/prenotazioni/soggiornoCorrente/**").permitAll());
 
         //nega l'accesso a qualsiasi servizio che non sia get e path /api/users
         httpSecurity.authorizeHttpRequests(http -> http.requestMatchers("/**").denyAll());

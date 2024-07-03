@@ -14,6 +14,5 @@ public class AuthDataDto {
     private String email;
     private String nome;
     private String cognome;
-    //private String avatar;
     private Ruolo ruolo;
 }
