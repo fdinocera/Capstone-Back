@@ -66,7 +66,6 @@ public class Config {
                 "https://exact-roxy-fdinocera-9adefc80.koyeb.app/",
                 "https://panoramica45.netlify.app/"
                 //"https://courageous-crepe-2d7d0a.netlify.app/"
-
         ));
         corsConfiguration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         corsConfiguration.setAllowedHeaders(List.of("*"));
